@@ -3,15 +3,14 @@ on: [push]
 jobs:
   frontend-test:
     runs-on: ubuntu-latest
-    strategy:
-      steps:
-        - uses: actions/checkout@v3
-        - name: Use Node.js 16
-          uses: actions/setup-node@v3
-          with:
-            node-version: 16
-        - run: npm ci
-        - run: npm run test:prod
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run test:prod
 
   docker:
     runs-on: ubuntu-latest

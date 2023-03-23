@@ -9,9 +9,9 @@ jobs:
         with:
           node-version: 16
       - name: install npm libraries
-      - run: npm ci
+        run: npm ci
       - name: run prod tests
-      - run: npm run test:prod
+        run: npm run test:prod
 
   docker:
     runs-on: ubuntu-latest
